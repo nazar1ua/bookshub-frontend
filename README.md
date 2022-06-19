@@ -1,19 +1,17 @@
-# books-hub
+# BooksHub Front-end
+Repository for books library front-end
 
-## Project setup
-```
+## Встановлення залежностей
+```shell
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
+### Компіляція для  розробки
+```shell
 yarn serve
 ```
 
-### Compiles and minifies for production
-```
+### Компіляція для розгортання
+```shell
 yarn build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
