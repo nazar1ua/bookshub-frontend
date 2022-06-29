@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <img src="../assets/book-and-glasses.png" alt="Books and glasses" class="img-fluid d-block mx-auto mt-5">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <img src="../assets/book-and-glasses.png" alt="Books and glasses" class="block mx-auto mt-5">
   </div>
 </template>
 

@@ -1,78 +1,48 @@
 <template>
-  <div class="container text-center">
-    <main class="form-signin w-100 m-auto">
-      <form-validation @submitted="register">
-        <img class="mb-4" src="//getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">{{ $tc('nav.register', 0) }}</h1>
+  <div class="bg-gray-50 min-h-page flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Зареєструйте свій акаунт</h2>
+    </div>
 
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingName" :placeholder="$t('authorization.name')" required minlength="3">
-          <label for="floatingName">{{$t('authorization.name')}}</label>
-        </div>
-        <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" :placeholder="$t('authorization.email')" required>
-          <label for="floatingInput">{{ $t('authorization.email') }}</label>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" :placeholder="$t('authorization.password')" required minlength="8">
-          <label for="floatingPassword">{{ $t('authorization.password') }}</label>
-        </div>
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <form-validation v-slot="{isValidated}" @submitted="register" class="space-y-6">
+          <form-input v-model="formData.name" name="name" type="text" autocomplete="name" :validated="isValidated" minlength="3" error="Довжина імені має бути більшою за 3 символи">Ім'я</form-input>
+          <form-input v-model="formData.email" name="email" type="email" autocomplete="email" :required="true" :validated="isValidated" error="Введіть правильну електронну адресу">Електронна адреса</form-input>
+          <form-input v-model="formData.password" name="password" type="password" autocomplete="current-password" :required="true" minlength="8" :validated="isValidated" error="Пароль має бути не меншим, ніж 8 символів">Пароль</form-input>
 
-        <div class="form-check mb-3 text-start">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">{{ $t('authorization.rememberMe') }}</label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">{{ $tc('nav.register', 1) }}</button>
-      </form-validation>
-    </main>
+          <form-button type="submit">Зареєструватись</form-button>
+        </form-validation>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import FormValidation from '../components/FormValidation.vue'
+import FormValidation from '@/components/FormComponents/FormValidation.vue'
+import FormButton from '@/components/FormComponents/FormButton.vue'
+import FormInput from '@/components/FormComponents/FormInput.vue'
 
 export default {
   name: "Register",
-  components: {FormValidation},
+  components: { FormValidation, FormButton, FormInput },
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        password: '',
+      }
+    }
+  },
   methods: {
     register() {
-      console.log("yes")
     },
   }
 }
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"],
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="email"],
-.form-signin input[type="password"] {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-}
 </style>
