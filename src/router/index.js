@@ -28,6 +28,6 @@ const routes = [
 ]
 
 export default createRouter({
-    history: createWebHistory('/bookshub-frontend/'),
+    history: createWebHashHistory('/bookshub-frontend/'),
     routes,
 })
