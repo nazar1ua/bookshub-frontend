@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkbooks_hub"]=self["webpackChunkbooks_hub"]||[]).push([[746],{378:function(s,n,o){o.r(n),o.d(n,{default:function(){return k}});var a=o(3396),e=o.p+"img/book-and-glasses.f0be775c.png";const u={class:"container mx-auto px-4 sm:px-6 lg:px-8"},c=(0,a._)("img",{src:e,alt:"Books and glasses",class:"block mx-auto my-5"},null,-1),t=[c];function r(s,n,o,e,c,r){return(0,a.wg)(),(0,a.iD)("div",u,t)}var l={name:"Home"},b=o(89);const i=(0,b.Z)(l,[["render",r]]);var k=i}}]);
+//# sourceMappingURL=746.9b1303b2.js.map
